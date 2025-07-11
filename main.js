@@ -29,7 +29,7 @@ function renderLanding() {
             </div>
             <div>
               <div class="landing__param-label">Стоимость подключения</div>
-              <div class="landing__param-value">Бесплатно, если не пользоваться</div>
+              <div class="landing__param-value">Бесплатно</div>
             </div>
             <div>
               <div class="landing__param-label">С каждого использования</div>
