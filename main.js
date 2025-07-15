@@ -6,6 +6,13 @@ function renderLanding() {
     renderPlaceholder();
     return;
   }
+  // Отправляем событие просмотра экрана условий рассрочки только при первом рендере
+  if (!window.__landingViewed) {
+    window.__landingViewed = true;
+    if (typeof gtag === 'function') {
+      gtag('event', '5231_page_view_zkd_var3');
+    }
+  }
   app.innerHTML = `
     <div class="landing">
       <img src="img/calendar.png" alt="Календарь" class="landing__img" />
@@ -60,6 +67,13 @@ function renderPlaceholder() {
   `;
   // Очищаем историю, чтобы нельзя было вернуться назад
   history.replaceState(null, '', location.href);
+  // Отправляем событие просмотра финальной страницы только при первом рендере
+  if (!window.__endPageViewed) {
+    window.__endPageViewed = true;
+    if (typeof gtag === 'function') {
+      gtag('event', '5231_end_page_view_zkd_var3');
+    }
+  }
 }
 
 renderLanding(); 
